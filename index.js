@@ -1,7 +1,6 @@
 const Random = require("seedrandom");
-const a = Random("chuanpu");
 
-const _ = new Array(8).fill(10).map((i, index) => i * 10 ** index);
+const _ = new Array(6).fill(10).map((i, index) => i * 10 ** index);
 
 _.map((TIMES) => {
   const TEST_SEED_LABEL = `seedrandom.quick()`;
@@ -10,7 +9,9 @@ _.map((TIMES) => {
 
   /* seedrandom */
   console.time(TEST_SEED_LABEL);
+
   for (let i = 0; i < TIMES; i++) {
+    const a = Random("chuanpu" + i);
     a.quick();
   }
   console.timeEnd(TEST_SEED_LABEL);
@@ -21,7 +22,7 @@ _.map((TIMES) => {
   }
   console.time(TEST_CUSTOM_LABEL);
   for (let i = 0; i < TIMES; i++) {
-    customRandom();
+    customRandom(i);
   }
   console.timeEnd(TEST_CUSTOM_LABEL);
 

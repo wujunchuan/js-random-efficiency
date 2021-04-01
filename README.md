@@ -1,42 +1,40 @@
 ## 测试随机数生成效率问题
 
+### Update
+
+#### 2021年04月01日
+
+- 每次的 seed 的重置
+
 ### Node.js 测试结果
 
 node -v -> v10.23.2
 
 ```
-seedrandom.quick(): 4.260ms
-customRandom(): 3.082ms
-Math.random(): 0.142ms
+seedrandom.quick(): 22.289ms
+customRandom(): 3.358ms
+Math.random(): 0.160ms
 ---------10-------------
-seedrandom.quick(): 0.173ms
-customRandom(): 0.080ms
-Math.random(): 0.007ms
+seedrandom.quick(): 21.027ms
+customRandom(): 0.468ms
+Math.random(): 0.039ms
 ---------100-------------
-seedrandom.quick(): 3.663ms
-customRandom(): 0.546ms
-Math.random(): 0.080ms
+seedrandom.quick(): 13.652ms
+customRandom(): 0.730ms
+Math.random(): 0.081ms
 ---------1000-------------
-seedrandom.quick(): 6.293ms
-customRandom(): 2.258ms
-Math.random(): 0.401ms
+seedrandom.quick(): 91.281ms
+customRandom(): 7.549ms
+Math.random(): 0.284ms
 ---------10000-------------
-seedrandom.quick(): 1.439ms
-customRandom(): 1.719ms
-Math.random(): 2.554ms
+seedrandom.quick(): 501.879ms
+customRandom(): 23.587ms
+Math.random(): 1.137ms
 ---------100000-------------
-seedrandom.quick(): 10.315ms
-customRandom(): 16.180ms
-Math.random(): 9.508ms
+seedrandom.quick(): 4970.566ms
+customRandom(): 242.157ms
+Math.random(): 12.688ms
 ---------1000000-------------
-seedrandom.quick(): 101.893ms
-customRandom(): 157.586ms
-Math.random(): 80.900ms
----------10000000-------------
-seedrandom.quick(): 1021.048ms
-customRandom(): 1592.819ms
-Math.random(): 810.102ms
----------100000000-------------
 ```
 
 
@@ -46,37 +44,28 @@ Version 89.0.4389.90 (Official Build) (arm64)
 
 
 ```
-index.js:16 seedrandom.quick(): 0.015869140625 ms
-index.js:26 customRandom(): 0.02197265625 ms
-index.js:33 Math.random(): 0.001953125 ms
-index.js:34 ---------10-------------
-index.js:16 seedrandom.quick(): 0.051025390625 ms
-index.js:26 customRandom(): 0.010986328125 ms
-index.js:33 Math.random(): 0.00390625 ms
-index.js:34 ---------100-------------
-index.js:16 seedrandom.quick(): 0.742919921875 ms
-index.js:26 customRandom(): 0.10107421875 ms
-index.js:33 Math.random(): 0.03369140625 ms
-index.js:34 ---------1000-------------
-index.js:16 seedrandom.quick(): 1.59228515625 ms
-index.js:26 customRandom(): 0.805908203125 ms
-index.js:33 Math.random(): 0.698974609375 ms
-index.js:34 ---------10000-------------
-index.js:16 seedrandom.quick(): 0.805908203125 ms
-index.js:26 customRandom(): 0.6572265625 ms
-index.js:33 Math.random(): 1.23583984375 ms
-index.js:34 ---------100000-------------
-index.js:16 seedrandom.quick(): 7.8720703125 ms
-index.js:26 customRandom(): 6.47900390625 ms
-index.js:33 Math.random(): 7.25390625 ms
-index.js:34 ---------1000000-------------
-index.js:16 seedrandom.quick(): 76.218017578125 ms
-index.js:26 customRandom(): 69.804931640625 ms
-index.js:33 Math.random(): 71.322021484375 ms
-index.js:34 ---------10000000-------------
-index.js:16 seedrandom.quick(): 798.802978515625 ms
-index.js:26 customRandom(): 662.035888671875 ms
-index.js:33 Math.random(): 725.7919921875 ms
-index.js:34 ---------100000000-------------
-
+index.js:17 seedrandom.quick(): 1.007080078125 ms
+index.js:27 customRandom(): 0.073974609375 ms
+index.js:34 Math.random(): 0.002685546875 ms
+index.js:35 ---------10-------------
+index.js:17 seedrandom.quick(): 3.8798828125 ms
+index.js:27 customRandom(): 0.046875 ms
+index.js:34 Math.random(): 0.005859375 ms
+index.js:35 ---------100-------------
+index.js:17 seedrandom.quick(): 6.03076171875 ms
+index.js:27 customRandom(): 0.298095703125 ms
+index.js:34 Math.random(): 0.034912109375 ms
+index.js:35 ---------1000-------------
+index.js:17 seedrandom.quick(): 41.98974609375 ms
+index.js:27 customRandom(): 3.534912109375 ms
+index.js:34 Math.random(): 0.073974609375 ms
+index.js:35 ---------10000-------------
+index.js:17 seedrandom.quick(): 365.75390625 ms
+index.js:27 customRandom(): 17.106201171875 ms
+index.js:34 Math.random(): 0.692138671875 ms
+index.js:35 ---------100000-------------
+index.js:17 seedrandom.quick(): 3662.8232421875 ms
+index.js:27 customRandom(): 174.419921875 ms
+index.js:34 Math.random(): 8.068115234375 ms
+index.js:35 ---------1000000-------------
 ```
